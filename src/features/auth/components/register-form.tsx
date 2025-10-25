@@ -11,6 +11,7 @@ import {useForm} from "react-hook-form";
 import {authClient} from "@/lib/auth-client";
 import {toast} from "sonner";
 import {useRouter} from "next/navigation";
+import Image from "next/image";
 
 const registerSchema = z.object({
     email: z.email("Please enter a valid email"),
@@ -73,11 +74,12 @@ export function RegisterForm() {
                             <div className="grid gap-6">
                                 <div className="flex flex-col gap-4">
                                     <Button
-                                    variant={"outline"}
-                                    className={'w-full'}
-                                    type={"button"}
-                                    disabled={isPending}
+                                        variant={"outline"}
+                                        className={'w-full'}
+                                        type={"button"}
+                                        disabled={isPending}
                                     >
+                                        <Image src={"/google.svg"} alt={""} width={20} height={20} />
                                         Continue with google
                                     </Button>
                                     <Button
@@ -86,6 +88,7 @@ export function RegisterForm() {
                                         type={"button"}
                                         disabled={isPending}
                                     >
+                                        <Image src={"/github.svg"} alt={""} width={20} height={20} />
                                         Continue with Github
                                     </Button>
                                 </div>
@@ -142,7 +145,7 @@ export function RegisterForm() {
                                         )}
                                     />
                                     <Button type={"submit"} className={'w-full'} disabled={isPending}>
-                                        Login
+                                        Register
                                     </Button>
                                 </div>
                                 <div className={'text-center text-sm'}>

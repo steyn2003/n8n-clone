@@ -12,6 +12,7 @@ import {authClient} from "@/lib/auth-client";
 import {toast} from "sonner";
 import {useRouter} from "next/navigation";
 import {requireUnAuth} from "@/lib/auth-utils";
+import Image from "next/image";
 
 const loginSchema = z.object({
     email: z.email("Please enter a valid email"),
@@ -73,6 +74,7 @@ export function LoginForm() {
                                     type={"button"}
                                     disabled={isPending}
                                     >
+                                        <Image src={"/google.svg"} alt={""} width={20} height={20} />
                                         Continue with google
                                     </Button>
                                     <Button
@@ -81,6 +83,7 @@ export function LoginForm() {
                                         type={"button"}
                                         disabled={isPending}
                                     >
+                                        <Image src={"/github.svg"} alt={""} width={20} height={20} />
                                         Continue with Github
                                     </Button>
                                 </div>
